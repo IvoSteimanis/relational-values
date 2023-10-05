@@ -1,7 +1,7 @@
 # Replication Package
 This repository contains the raw data and code that replicates tables and figures for the following paper: <br><br>
 __Title:__ Quantifying Relational Values in the Context of Adaptation in Atoll Ecosystemsy <br>
-__Authors:__ Marco Nilgen, Maximilian Nicolaus Burger, Ivo Steimanis, Björn Vollan<sup>* <br>
+__Authors:__ Marco Nilgen, Maximilian Nicolaus Burger, Ivo Steimanis, Björn Vollan<sup>*</sup> <br>
 __Affiliations:__ All Research Group for Sustainable Use of Natural Resources, Philipps University Marburg, 35032 Marburg, Germany  <br>
 __*Correspondence to:__ Bjoern Vollan bjoern.vollan@wiwi.uni-marburg.de <br>
 __ORCID:__ Nilgen: 0000-0001-7358-4965; Burger: 0000-0003-2334-3885; Steimanis: 0000-0002-8550-4675; Vollan: 0000-0002-5592-4185 <br>
