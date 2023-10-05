@@ -1,0 +1,54 @@
+StataFileTM:00001:01100:GREC:                          :
+00007:00007:00001:
+*! classname: bygraph_g
+*! family: by
+*! date: 27 Sep 2023
+*! time: 15:44:47
+*! graph_scheme: _GRSTYLE_
+*! naturallywhite: 1
+*! end
+
+// File created by Graph Editor Recorder.
+// Edit only if you know what you are doing.
+
+.legend.plotregion1.label[1].style.editstyle size(6-pt) editcopy
+// label[1] size
+
+.legend.plotregion1.label[2].style.editstyle size(6-pt) editcopy
+// label[2] size
+
+.plotregion1.xaxis1[1].style.editstyle majorstyle(tickstyle(textstyle(size(6-pt)))) editcopy
+// xaxis1[1] size
+
+.plotregion1.xaxis1[1].reset_rule 5, tickset(major) ruletype(suggest) 
+// xaxis1[1] edits
+
+.plotregion1.xaxis1[1].reset_rule 5, tickset(major) ruletype(suggest) 
+// xaxis1[1] edits
+
+.plotregion1.xaxis1[1].reset_rule 5, tickset(major) ruletype(suggest) 
+// xaxis1[1] edits
+
+.plotregion1.xaxis1[2].reset_rule 5, tickset(major) ruletype(suggest) 
+// xaxis1[2] edits
+
+.plotregion1.xaxis1[2].reset_rule 5, tickset(major) ruletype(suggest) 
+// xaxis1[2] edits
+
+.plotregion1.xaxis1[3].reset_rule 5, tickset(major) ruletype(suggest) 
+// xaxis1[3] edits
+
+.plotregion1.xaxis1[3].reset_rule 5, tickset(major) ruletype(suggest) 
+// xaxis1[3] edits
+
+.plotregion1.xaxis1[4].reset_rule 5, tickset(major) ruletype(suggest) 
+// xaxis1[4] edits
+
+.plotregion1.xaxis1[4].reset_rule 5, tickset(major) ruletype(suggest) 
+// xaxis1[4] edits
+
+.plotregion1.yaxis1[1].style.editstyle majorstyle(tickstyle(textstyle(size(6-pt)))) editcopy
+// yaxis1[1] size
+
+
+// <end>

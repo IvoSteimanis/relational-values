@@ -1,0 +1,81 @@
+StataFileTM:00001:01100:GREC:                          :
+00007:00007:00001:
+*! classname: twowaygraph_g
+*! family: twoway
+*! date: 21 Aug 2023
+*! time: 16:29:55
+*! graph_scheme: _GRSTYLE_
+*! naturallywhite: 1
+*! end
+
+// File created by Graph Editor Recorder.
+// Edit only if you know what you are doing.
+
+.plotregion1.AddTextBox added_text editor 1.000449597291863 1.104066287056871
+.plotregion1.added_text_new = 1
+.plotregion1.added_text_rec = 1
+.plotregion1.added_text[1].style.editstyle  angle(default) size( sztype(relative) val(2.777777777777778) allow_pct(1)) color(black) horizontal(left) vertical(middle) margin( gleft( sztype(relative) val(0) allow_pct(1)) gright( sztype(relative) val(0) allow_pct(1)) gtop( sztype(relative) val(0) allow_pct(1)) gbottom( sztype(relative) val(0) allow_pct(1))) linegap( sztype(relative) val(0) allow_pct(1)) drawbox(no) boxmargin( gleft( sztype(relative) val(0) allow_pct(1)) gright( sztype(relative) val(0) allow_pct(1)) gtop( sztype(relative) val(0) allow_pct(1)) gbottom( sztype(relative) val(0) allow_pct(1))) fillcolor(bluishgray) linestyle( width( sztype(relative) val(.15) allow_pct(1)) color(black) pattern(solid) align(inside)) box_alignment(east) editcopy
+.plotregion1.added_text[1].style.editstyle size(6-pt) editcopy
+.plotregion1.added_text[1].text = {}
+.plotregion1.added_text[1].text.Arrpush 41%
+.plotregion1.added_text[1].style.editstyle color(green) editcopy
+// editor text[1] edits
+
+.plotregion1.added_text[1].style.editstyle color(black) editcopy
+// editor text[1] color
+
+.plotregion1.AddTextBox added_text editor 1.822416844107444 1.027807070212233
+.plotregion1.added_text_new = 2
+.plotregion1.added_text_rec = 2
+.plotregion1.added_text[2].style.editstyle  angle(default) size( sztype(relative) val(2.777777777777778) allow_pct(1)) color(black) horizontal(left) vertical(middle) margin( gleft( sztype(relative) val(0) allow_pct(1)) gright( sztype(relative) val(0) allow_pct(1)) gtop( sztype(relative) val(0) allow_pct(1)) gbottom( sztype(relative) val(0) allow_pct(1))) linegap( sztype(relative) val(0) allow_pct(1)) drawbox(no) boxmargin( gleft( sztype(relative) val(0) allow_pct(1)) gright( sztype(relative) val(0) allow_pct(1)) gtop( sztype(relative) val(0) allow_pct(1)) gbottom( sztype(relative) val(0) allow_pct(1))) fillcolor(bluishgray) linestyle( width( sztype(relative) val(.15) allow_pct(1)) color(black) pattern(solid) align(inside)) box_alignment(east) editcopy
+// editor text[1] edits
+
+.plotregion1.AddTextBox added_text editor 1.822416844107444 1.045600887475982
+.plotregion1.added_text_new = 3
+.plotregion1.added_text_rec = 3
+.plotregion1.added_text[3].style.editstyle  angle(default) size( sztype(relative) val(2.777777777777778) allow_pct(1)) color(black) horizontal(left) vertical(middle) margin( gleft( sztype(relative) val(0) allow_pct(1)) gright( sztype(relative) val(0) allow_pct(1)) gtop( sztype(relative) val(0) allow_pct(1)) gbottom( sztype(relative) val(0) allow_pct(1))) linegap( sztype(relative) val(0) allow_pct(1)) drawbox(no) boxmargin( gleft( sztype(relative) val(0) allow_pct(1)) gright( sztype(relative) val(0) allow_pct(1)) gtop( sztype(relative) val(0) allow_pct(1)) gbottom( sztype(relative) val(0) allow_pct(1))) fillcolor(bluishgray) linestyle( width( sztype(relative) val(.15) allow_pct(1)) color(black) pattern(solid) align(inside)) box_alignment(east) editcopy
+.plotregion1.added_text[3].style.editstyle size(6-pt) editcopy
+.plotregion1.added_text[3].text = {}
+.plotregion1.added_text[3].text.Arrpush 27%
+// editor text[3] edits
+
+.plotregion1.AddTextBox added_text editor 2.871560968183609 1.025265096317412
+.plotregion1.added_text_new = 4
+.plotregion1.added_text_rec = 4
+.plotregion1.added_text[4].style.editstyle  angle(default) size( sztype(relative) val(2.777777777777778) allow_pct(1)) color(black) horizontal(left) vertical(middle) margin( gleft( sztype(relative) val(0) allow_pct(1)) gright( sztype(relative) val(0) allow_pct(1)) gtop( sztype(relative) val(0) allow_pct(1)) gbottom( sztype(relative) val(0) allow_pct(1))) linegap( sztype(relative) val(0) allow_pct(1)) drawbox(no) boxmargin( gleft( sztype(relative) val(0) allow_pct(1)) gright( sztype(relative) val(0) allow_pct(1)) gtop( sztype(relative) val(0) allow_pct(1)) gbottom( sztype(relative) val(0) allow_pct(1))) fillcolor(bluishgray) linestyle( width( sztype(relative) val(.15) allow_pct(1)) color(black) pattern(solid) align(inside)) box_alignment(east) editcopy
+.plotregion1.added_text[4].style.editstyle size(6-pt) editcopy
+.plotregion1.added_text[4].text = {}
+.plotregion1.added_text[4].text.Arrpush 21%
+// editor text[4] edits
+
+.plotregion1.AddTextBox added_text editor 3.895922160194985 1.045600887475982
+.plotregion1.added_text_new = 5
+.plotregion1.added_text_rec = 5
+.plotregion1.added_text[5].style.editstyle  angle(default) size( sztype(relative) val(2.777777777777778) allow_pct(1)) color(black) horizontal(left) vertical(middle) margin( gleft( sztype(relative) val(0) allow_pct(1)) gright( sztype(relative) val(0) allow_pct(1)) gtop( sztype(relative) val(0) allow_pct(1)) gbottom( sztype(relative) val(0) allow_pct(1))) linegap( sztype(relative) val(0) allow_pct(1)) drawbox(no) boxmargin( gleft( sztype(relative) val(0) allow_pct(1)) gright( sztype(relative) val(0) allow_pct(1)) gtop( sztype(relative) val(0) allow_pct(1)) gbottom( sztype(relative) val(0) allow_pct(1))) fillcolor(bluishgray) linestyle( width( sztype(relative) val(.15) allow_pct(1)) color(black) pattern(solid) align(inside)) box_alignment(east) editcopy
+// editor text[4] edits
+
+.plotregion1.AddTextBox added_text editor 3.904183137549915 1.032891018001876
+.plotregion1.added_text_new = 6
+.plotregion1.added_text_rec = 6
+.plotregion1.added_text[6].style.editstyle  angle(default) size( sztype(relative) val(2.777777777777778) allow_pct(1)) color(black) horizontal(left) vertical(middle) margin( gleft( sztype(relative) val(0) allow_pct(1)) gright( sztype(relative) val(0) allow_pct(1)) gtop( sztype(relative) val(0) allow_pct(1)) gbottom( sztype(relative) val(0) allow_pct(1))) linegap( sztype(relative) val(0) allow_pct(1)) drawbox(no) boxmargin( gleft( sztype(relative) val(0) allow_pct(1)) gright( sztype(relative) val(0) allow_pct(1)) gtop( sztype(relative) val(0) allow_pct(1)) gbottom( sztype(relative) val(0) allow_pct(1))) fillcolor(bluishgray) linestyle( width( sztype(relative) val(.15) allow_pct(1)) color(black) pattern(solid) align(inside)) box_alignment(east) editcopy
+.plotregion1.added_text[6].style.editstyle size(6-pt) editcopy
+.plotregion1.added_text[6].text = {}
+.plotregion1.added_text[6].text.Arrpush 11%
+// editor text[6] edits
+
+.plotregion1.added_text[1].DragBy -.0991317282591661 -.0660913212653526
+// editor text[1] reposition
+
+.plotregion1.added_text[3].DragBy .0330439094197229 -.0228777650533912
+// editor text[3] reposition
+
+.plotregion1.AddTextBox added_text editor .9054483577101642 2.052222549825199
+.plotregion1.added_text_new = 7
+.plotregion1.added_text_rec = 7
+.plotregion1.added_text[7].style.editstyle  angle(default) size( sztype(relative) val(2.777777777777778) allow_pct(1)) color(black) horizontal(left) vertical(middle) margin( gleft( sztype(relative) val(0) allow_pct(1)) gright( sztype(relative) val(0) allow_pct(1)) gtop( sztype(relative) val(0) allow_pct(1)) gbottom( sztype(relative) val(0) allow_pct(1))) linegap( sztype(relative) val(0) allow_pct(1)) drawbox(no) boxmargin( gleft( sztype(relative) val(0) allow_pct(1)) gright( sztype(relative) val(0) allow_pct(1)) gtop( sztype(relative) val(0) allow_pct(1)) gbottom( sztype(relative) val(0) allow_pct(1))) fillcolor(bluishgray) linestyle( width( sztype(relative) val(.15) allow_pct(1)) color(black) pattern(solid) align(inside)) box_alignment(east) editcopy
+.plotregion1.AddTextBox added_text editor 1.86785221955956 3.216446593653335
+.plotregion1.added_text_new = 8
+.plotregion1.added_text_rec = 8
+.plotregion1.added_text[8].style.editstyle  angle(default) size( sztype(relative) val(2.777777777777778) allow_pct(1)) color(black) horizontal(left) vertical(middle) margin( gleft( sztype(relative) val(0) allow_pct(1)) gright( sztype(relative) val(0) allow_pct(1)) gtop( sztype(relative) val(0) allow_pct(1)) gbottom( sztype(relative) val(0) allow_pct(1))) linegap( sztype(relative) val(0) allow_pct(1)) drawbox(no) boxmargin( gleft( sztype(relative) val(0) allow_pct(1)) gright( sztype(relative) val(0) allow_pct(1)) gtop( sztype(relative) val(0) allow_pct(1)) gbottom( sztype(relative) val(0) allow_pct(1))) fillcolor(bluishgray) linestyle( width( sztype(relative) val(.15) allow_pct(1)) color(black) pattern(solid) align(inside)) box_alignment(east) editcopy
+
+// <end>
