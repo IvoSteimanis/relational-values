@@ -17,7 +17,7 @@
 *--------------------------------------------------
 * Define this global macro to point where the replication folder is saved locally that includes this run.do script
 
-global working_ANALYSIS "C:\Users\istei\HESSENBOX\2-Projekte (Björn Vollan)\Paper SustUse\Solomon Relational Values\replication_package"
+global working_ANALYSIS "YourPath"
 
 
 *--------------------------------------------------
