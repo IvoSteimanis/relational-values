@@ -1,6 +1,6 @@
 # Replication Package
 This repository contains the raw data and code that replicates tables and figures for the following paper: <br><br>
-__Title:__ Quantifying Relational Values in the Context of Adaptation in Atoll Ecosystemsy <br>
+__Title:__ Pitfalls of Monetizing Relational Values in the Context of Climate Change Adaptation <br>
 __Authors:__ Marco Nilgen, Maximilian Nicolaus Burger, Ivo Steimanis, Björn Vollan<sup>*</sup> <br>
 __Affiliations:__ All Research Group for Sustainable Use of Natural Resources, Philipps University Marburg, 35032 Marburg, Germany  <br>
 __*Correspondence to:__ Bjoern Vollan bjoern.vollan@wiwi.uni-marburg.de <br>
