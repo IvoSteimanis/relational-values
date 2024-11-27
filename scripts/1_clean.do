@@ -40,7 +40,7 @@ drop in 1/13 // Functionality tests
 destring *, replace
 
 
-
+gen country=1
 
 
 *--------------------------------------------
@@ -877,6 +877,10 @@ gen wtp_wins = wtp
 replace wtp_wins = 200 if wtp > 200
 lab var wtp_wins  "WTP winsorized at 200"
 
+//PPP adjust wtp_wins:  from World Bank 2022 conversion factor: 6.77
+gen wtp_ppp = wtp_wins/6.77
+
+
 // WTP categories
 gen wtp_cat = .
 replace wtp_cat = 0 if wtp == 0
@@ -914,12 +918,12 @@ lab var rv3_1 "RV1"
 lab var rv3_2 "RV2"
 lab var rv3_3 "RV3"
 lab var rv3_4 "RV4"
-lab var rel_val "Average index (RV1-4)"
+lab var rel_val "Average index (RV1-5)"
 lab var rv4 "Intrinsic"
 lab var rv5 "Instrumental"
 
 egen count_rel_val = count(id), by(rel_val)
-egen share_wtp_wins = mean(wtp_wins), by(rel_val)
+egen share_wtp_ppp = mean(wtp_ppp), by(rel_val)
 
 *three categories of RV: low, medium-high, maximum
 gen rel_cat = 0
@@ -930,7 +934,7 @@ lab val rel_cat rally
 
 // Winsorized governmental budget allocation
 gen allocation_percent_wins = allocation_percent
-replace allocation_percent_wins = 10 if allocation_percent > 30
+replace allocation_percent_wins = 30 if allocation_percent > 30
 lab var allocation_percent_wins "Increase in Budget (winsorized at 30%)"
 
 egen share_allocation_wins = mean(allocation_percent_wins), by(rel_val)
@@ -938,7 +942,6 @@ egen count_allo = count(id), by(share_allocation_wins)
 
 // Ranking: Reasons for conservation most important
 tab rv6_most, gen(rv6_most)
-lab val rv6_most opinion_ranking
 *ranking of different alternatives
 gen instrumental = 1 if rv6_most==1
 replace instrumental = 2 if rv6_second==1
@@ -967,10 +970,10 @@ replace relational_steward = 2 if rv6_second==4
 replace relational_steward = 3 if rv6_third==4
 replace relational_steward = 4 if rv6_least==4
 lab val relational_steward rel_ranking
-lab var relational_steward "RV: Stewardship"
+lab var relational_steward "RV: Steward"
 	
 gen avg_relational = (relational_culture +  relational_steward)/2
-lab var avg_relational "Average rank: Culture&Stewardship [1.5, 3.5]"
+lab var avg_relational "Average rank: RV"
 
 lab def opinion_ranking 1 "Instrumental" 2 "Intrinsinc" 3 "Relational: Culture" 4 "Relational: Stewardship", replace
 
@@ -1116,11 +1119,11 @@ order ///
 /*Module I: Socio-Econ II*/ hh_member hh_member_18 children income ln_income hh_income_average ln_hh_income_average hh_income_good hh_income_bad low_nutri budget_sparetime budget_temptation budget_saving  agri_land non_agri_land house other_building radio television phone generator solar fridge sound_system stove sewing_machine chainsaw fiberglass_boat wood_boat engine car motor_cycle bicycle plough watertank house_stone house_brick house_mud_wood house_mud_cement house_wood house_iron house_grass_straw house_tin health ///
 /*Module I: SE-Problem location*/ children_education children_economic children_satisfac children_community children_environ prob_food prob_sanitation prob_disease prob_crime prob_hazard prob_pollution prob_poverty prob_population prob_jobs prob_social_service prob_credit prob_transfer prob_housing prob_tranpsort prob_work prob_conflict prob_land prob_corruption prob_gender_ineq ///
 /*Module I: SE-Membership*/ member_assosi member_neighborhood member_district member_migrant member_livelihood member_farmer member_formal_political member_informal_political member_student member_women member_cultural member_sport member_other comments phone_nr ///
-/*added variables from 2_analysis.do*/ place wtp_wins wtp_cat ln_wtp d_wtp wtp_below60 allocation_percent_wins rel_val rv6_most1 rv6_most2 rv6_most3 rv6_most4 visit_often norm_visit_home_wins norm_receive_visit_wins visit_receive visit_receive_wins norm_pca edu edu1 edu2 edu3 rel_living_here place_attachment ln_budget_sparetime ln_budget_temptation ln_budget_saving wealth_pca budget ln_budget instrumental intrinsic relational_culture relational_steward avg_relational ties_cat ties_cat1 ties_cat2 ties_cat3 ties_cat4 z_wtp_wins z_wtp_cat z_ln_wtp z_d_wtp z_rv6_most1 z_rv6_most2 z_rv6_most3 z_rv6_most4 z_ties_cat1 z_ties_cat2 z_ties_cat3 z_ties_cat4 z_place_attachment z_age z_female z_single z_ln_income z_edu2 z_edu3 z_treat z_rel_val
+/*added variables from 2_analysis.do*/ place wtp_wins wtp_ppp wtp_cat ln_wtp d_wtp wtp_below60 allocation_percent_wins rel_val rv6_most1 rv6_most2 rv6_most3 rv6_most4 visit_often norm_visit_home_wins norm_receive_visit_wins visit_receive visit_receive_wins norm_pca edu edu1 edu2 edu3 rel_living_here place_attachment ln_budget_sparetime ln_budget_temptation ln_budget_saving wealth_pca budget ln_budget instrumental intrinsic relational_culture relational_steward avg_relational ties_cat ties_cat1 ties_cat2 ties_cat3 ties_cat4 z_wtp_wins z_wtp_cat z_ln_wtp z_d_wtp z_rv6_most1 z_rv6_most2 z_rv6_most3 z_rv6_most4 z_ties_cat1 z_ties_cat2 z_ties_cat3 z_ties_cat4 z_place_attachment z_age z_female z_single z_ln_income z_edu2 z_edu3 z_treat z_rel_val
 
 
 keep ///
-/*setup*/ date date_ra start end time_sum interviewer interview_village notes particip_2017 islander ties_cat ///
+/*setup*/ country date date_ra start end time_sum interviewer interview_village notes particip_2017 islander ties_cat ///
 /*Module A: socioeconomics I*/ surname name familyname female marital single age edu_yr edu_highest college bachelor masters doctoral none living_province living_village living_here_always living_here_years home home_province home_village outside_hon ethnicity ethnicity_other pidgin english melanesian polynesian traditional lhs_language language_other hh_decision hh_decision_other ///
 /*Module B: Climate Change Perception*/ cc_belief1 cc_belief2 cc_belief3 cc_uncertain cc_agency fut_droughts_often fut_droughts_longer fut_cyclones_often fut_rain_often fut_floods_stronger fut_intrusion_stroner fut_sea_higher fut_erosion_more ///
 /*Module C: Relational Value Scenario*/ treat time_scenario wtp wtp_reason wtp_reason_no allocation_percent rv3_1 rv3_2 rv3_3 rv3_4 rv4 rv5 rv6_most rv6_second rv6_third rv6_least rv7_1 rv7_2 rv7_3 rv7_4 ///
@@ -1135,11 +1138,7 @@ keep ///
 /*Module I: Socio-Econ II*/ hh_member hh_member_18 children income ln_income hh_income_average ln_hh_income_average hh_income_good hh_income_bad low_nutri budget_sparetime budget_temptation budget_saving  agri_land non_agri_land house other_building radio television phone generator solar fridge sound_system stove sewing_machine chainsaw fiberglass_boat wood_boat engine car motor_cycle bicycle plough watertank house_stone house_brick house_mud_wood house_mud_cement house_wood house_iron house_grass_straw house_tin health ///
 /*Module I: SE-Problem location*/ children_education children_economic children_satisfac children_community children_environ prob_food prob_sanitation prob_disease prob_crime prob_hazard prob_pollution prob_poverty prob_population prob_jobs prob_social_service prob_credit prob_transfer prob_housing prob_tranpsort prob_work prob_conflict prob_land prob_corruption prob_gender_ineq ///
 /*Module I: SE-Membership*/ member_assosi member_neighborhood member_district member_migrant member_livelihood member_farmer member_formal_political member_informal_political member_student member_women member_cultural member_sport member_other comments phone_nr ///
-/*added variables from 2_analysis.do*/ place wtp_wins wtp_cat ln_wtp d_wtp wtp_below60 allocation_percent_wins rel_val rv6_most1 rv6_most2 rv6_most3 rv6_most4 visit_often norm_visit_home_wins norm_receive_visit_wins visit_receive visit_receive_wins norm_pca edu edu1 edu2 edu3 rel_living_here place_attachment ln_budget_sparetime ln_budget_temptation ln_budget_saving wealth_pca budget ln_budget instrumental intrinsic relational_culture relational_steward avg_relational ties_cat ties_cat1 ties_cat2 ties_cat3 ties_cat4 z_wtp_wins z_wtp_cat z_ln_wtp z_d_wtp z_rv6_most1 z_rv6_most2 z_rv6_most3 z_rv6_most4 z_ties_cat1 z_ties_cat2 z_ties_cat3 z_ties_cat4 z_place_attachment z_age z_female z_single z_ln_income z_edu2 z_edu3 z_treat z_rel_val d_wtp100 atoll_tie id count_rel_val share_wtp_wins rel_cat share_allocation_wins count_allo hh_income_average_w
-
-
-
-
+/*added variables from 2_analysis.do*/ place wtp_wins wtp_ppp wtp_cat ln_wtp d_wtp wtp_below60 allocation_percent_wins rel_val rv6_most1 rv6_most2 rv6_most3 rv6_most4 visit_often norm_visit_home_wins norm_receive_visit_wins visit_receive visit_receive_wins norm_pca edu edu1 edu2 edu3 rel_living_here place_attachment ln_budget_sparetime ln_budget_temptation ln_budget_saving wealth_pca budget ln_budget instrumental intrinsic relational_culture relational_steward avg_relational ties_cat ties_cat1 ties_cat2 ties_cat3 ties_cat4 z_wtp_wins z_wtp_cat z_ln_wtp z_d_wtp z_rv6_most1 z_rv6_most2 z_rv6_most3 z_rv6_most4 z_ties_cat1 z_ties_cat2 z_ties_cat3 z_ties_cat4 z_place_attachment z_age z_female z_single z_ln_income z_edu2 z_edu3 z_treat z_rel_val d_wtp100 atoll_tie id count_rel_val share_wtp_ppp rel_cat share_allocation_wins count_allo hh_income_average_w
 
 
 
@@ -1148,6 +1147,152 @@ keep ///
 save "$working_ANALYSIS\processed\si22.dta" , replace
 
 
+
+
+
+** BANGLADESH
+use "$working_ANALYSIS\processed\dhaka_2022_clean1.dta", replace
+
+rename t_scenario treat
+
+gen country=2
+
+replace id=806+id
+// Winsorized WTP to reduce outliers
+gen wtp_wins = wtp
+replace wtp_wins = 800 if wtp > 800
+lab var wtp_wins  "WTP winsorized at 800"
+
+//PPP adjust wtp_wins:  from World Bank 2022 conversion factor: 31.36
+gen wtp_ppp = wtp_wins/31.36
+
+
+// Log WTP
+gen ln_wtp = ln(wtp_wins+1)
+lab var ln_wtp "Logarithm of WTP"
+
+// Binary willingness to pay (No/Yes)
+gen d_wtp = 0
+replace d_wtp = 1 if wtp > 0
+lab var d_wtp "Willingness to pay > 0"
+gen d_wtp100=d_wtp*100
+
+
+
+// Index Relational Values
+rename relational_v1 rv3_1
+rename relational_v2 rv3_2
+rename relational_v3 rv3_3
+rename relational_v4 rv3_4
+
+alpha rv3*, gen(rel_val)
+lab var rel_val "Index: Higher index indicate higher RV"
+
+lab var rv3_1 "RV1"
+lab var rv3_2 "RV2"
+lab var rv3_3 "RV3"
+lab var rv3_4 "RV4"
+lab var rel_val "Average index (RV1-5)"
+
+
+
+egen z_rel_val = std(rel_val)
+
+*three categories of RV: low, medium-high, maximum
+gen rel_cat = 0
+replace rel_cat = 1 if rel_val >3 & rel_val <5
+replace rel_cat = 2 if rel_val==5
+lab def rally 0 "Index:1-3" 1 "Index: 3.25-4.75" 2 "Index: 5", replace
+lab val rel_cat rally
+
+
+// Winsorized governmental budget allocation
+gen allocation_percent_wins = budget_allocation
+replace allocation_percent_wins = 30 if budget_allocation > 30
+lab var allocation_percent_wins "Increase in Budget (winsorized at 30%)"
+
+
+
+// calculate counts across rel_val categories
+egen count_rel_val = count(id), by(rel_val)
+egen share_wtp_ppp = mean(wtp_ppp), by(rel_val)
+egen share_allocation_wins = mean(allocation_percent_wins), by(rel_val)
+egen count_allo = count(id), by(share_allocation_wins)
+
+rename budget_allocation allocation_percent
+
+
+// Ranking: Reasons for conservation most important
+encode v_importance1 , gen(rv6_most) 
+encode v_importance2 , gen(rv6_second)
+encode v_importance3 , gen(rv6_third)
+encode v_importance4 , gen(rv6_least)
+lab def opinion_ranking 1 "Instrumental" 2 "Intrinsinc" 3 "Relational: Culture" 4 "Relational: Stewardship", replace
+lab val rv6_most opinion_ranking
+
+tab rv6_most, gen(rv6_most)
+
+
+gen instrumental = 1 if rv6_most==1
+replace instrumental = 2 if rv6_second==1
+replace instrumental = 3 if rv6_third==1
+replace instrumental = 4 if rv6_least==1
+lab def rel_ranking 1 "Most important" 2 "2nd choice" 3 "3rd choice" 4 "Least important", replace
+lab val instrumental rel_ranking
+lab var instrumental "Instrumental"
+
+gen intrinsic = 1 if rv6_most==2
+replace intrinsic = 2 if rv6_second==2
+replace intrinsic = 3 if rv6_third==2
+replace intrinsic = 4 if rv6_least==2
+lab val intrinsic rel_ranking
+lab var intrinsic "Intrinsic"
+
+gen relational_culture = 1 if rv6_most==3
+replace relational_culture = 2 if rv6_second==3
+replace relational_culture = 3 if rv6_third==3
+replace relational_culture = 4 if rv6_least==3
+lab val relational_culture rel_ranking
+lab var relational_culture "RV: Culture"
+
+gen relational_steward = 1 if rv6_most==4
+replace relational_steward = 2 if rv6_second==4
+replace relational_steward = 3 if rv6_third==4
+replace relational_steward = 4 if rv6_least==4
+lab val relational_steward rel_ranking
+lab var relational_steward "RV: Steward"
+	
+gen avg_relational = (relational_culture +  relational_steward)/2
+lab var avg_relational "Average rank: RV"
+
+*socioe-economics
+gen single=0
+replace single=1 if marital==1
+
+* Wealth (PCA)
+
+pca income income_hh spend_save poor spend_sparetime spend_temptation low_nutri 
+predict wealth_pca
+
+keep hh_member id country place treat female marital age edu_yr wtp wtp_reason allocation_percent rv3_1 rv3_2 rv3_3 rv3_4 v_importance1 v_importance2 v_importance3 v_importance4 poor hh_member income income_hh low_nutri spend_sparetime spend_temptation spend_save wtp_wins wtp_ppp ln_wtp d_wtp d_wtp100  rel_val count_rel_val z_rel_val share_wtp_ppp rel_cat allocation_percent_wins share_allocation_wins count_allo rv6_most rv6_second rv6_third rv6_least rv6_most1 rv6_most2 rv6_most3 rv6_most4 instrumental intrinsic relational_culture relational_steward avg_relational single wealth_pca
+
+***Save
+save "$working_ANALYSIS\processed\dhaka22.dta" , replace
+
+
+
+
+*Append both datasets
+use "$working_ANALYSIS\processed\si22.dta" , replace
+
+append using "$working_ANALYSIS\processed\dhaka22.dta"
+
+lab def countries 1 "Solomon Islands" 2 "Bangladesh", replace
+lab val country countries
+
+
+***Save
+save "$working_ANALYSIS\processed\combined.dta" , replace
 
 
 

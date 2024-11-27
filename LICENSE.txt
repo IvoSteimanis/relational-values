@@ -2,7 +2,7 @@ Creative Commons Attribution 4.0 International Public License
 (https://creativecommons.org/licenses/by/4.0/)
 - applies to all code, scripts, data, images, tables, text, and any other objects
 
-COPYRIGHT 2023 Marco Nilgen, Maximilian Nicolaus Burger, Ivo Steimanis, Björn Vollan
+COPYRIGHT 2024 Marco Nilgen, Maximilian Nicolaus Burger, Ivo Steimanis, Björn Vollan
 
 =================================================================
 Creative Commons Attribution 4.0 International Public License
